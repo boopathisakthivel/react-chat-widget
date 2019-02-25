@@ -1,5 +1,13 @@
 import React, { Component } from 'react';
-import { Widget, addResponseMessage, setQuickButtons, toggleMsgLoader } from '../index';
+import { Widget, addResponseMessage, setQuickButtons, toggleMsgLoader, addUserCustomComponent } from '../index';
+
+class Suggestion extends Component {
+  render() {
+    return (
+      <div className={this.props.className}>{this.props.text}</div>
+    );
+  }
+};
 
 export default class App extends Component {
   componentDidMount() {
@@ -8,13 +16,16 @@ export default class App extends Component {
 
   handleNewUserMessage = (newMessage) => {    
     toggleMsgLoader();
+    
     setTimeout(() => {
       toggleMsgLoader();      
       if (newMessage === 'fruits') {
-        setQuickButtons([ { label: 'Apple', value: 'apple' }, { label: 'Orange', value: 'orange' }, { label: 'Pear', value: 'pear' }, { label: 'Banana', value: 'banana' } ]);
+        setQuickButtons([ { label: 'Apple', value: 'apple', type: "image", imagelink: "https://cdn-images-1.medium.com/max/1600/1*o6syWN_N3DPnAQ1zQM7z6g.jpeg" }, { label: 'Orange', value: 'orange' }, { label: 'Pear', value: 'pear' }, { label: 'Banana', value: 'banana' } ]);
       } else {
         addResponseMessage(newMessage);
       }
+      
+      addUserCustomComponent(Suggestion, {"className": "rcw-client", "text": "test"}, false);
     }, 2000);
   }
 

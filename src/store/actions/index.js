@@ -19,6 +19,15 @@ export function addUserMessage(text) {
   };
 }
 
+export function addUserCustomComponent(component, props, showAvatar) {
+  return {
+    type: actions.ADD_NEW_USER_COMPONENT_MESSAGE,
+    component,
+    props,
+    showAvatar
+  };
+}
+
 export function addResponseMessage(text) {
   return {
     type: actions.ADD_NEW_RESPONSE_MESSAGE,

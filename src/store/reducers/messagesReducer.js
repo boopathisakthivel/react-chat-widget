@@ -19,7 +19,10 @@ const messagesReducer = {
     state.push(createLinkSnippet(link, MESSAGE_SENDER.RESPONSE)),
 
   [actionTypes.ADD_COMPONENT_MESSAGE]: (state, { component, props, showAvatar }) =>
-    state.push(createComponentMessage(component, props, showAvatar)),
+    state.push(createComponentMessage(component, props, showAvatar, MESSAGE_SENDER.RESPONSE)),
+
+  [actionTypes.ADD_NEW_USER_COMPONENT_MESSAGE]: (state, { component, props, showAvatar }) =>
+    state.push(createComponentMessage(component, props, showAvatar, MESSAGE_SENDER.CLIENT)),
 
   [actionTypes.DROP_MESSAGES]: () => List([]),
 

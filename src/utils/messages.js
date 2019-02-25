@@ -27,13 +27,13 @@ export function createLinkSnippet(link) {
   });
 }
 
-export function createComponentMessage(component, props, showAvatar) {
+export function createComponentMessage(component, props, showAvatar, sender) {
   return Map({
     type: MESSAGES_TYPES.CUSTOM_COMPONENT,
     component,
     props,
-    sender: MESSAGE_SENDER.RESPONSE,
-    showAvatar
+    sender,
+    showAvatar: sender === MESSAGE_SENDER.RESPONSE
   });
 }
 
@@ -41,6 +41,8 @@ export function createQuickButton(button) {
   return Map({
     component: QuickButton,
     label: button.label,
-    value: button.value
+    value: button.value,
+    type: button.type,
+    imagelink: button.imagelink
   });
 }

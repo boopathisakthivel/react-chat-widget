@@ -5,6 +5,10 @@ export function addUserMessage(text) {
   store.dispatch(actions.addUserMessage(text));
 }
 
+export function addUserCustomComponent(component, props, showAvatar = false) {
+  store.dispatch(actions.addUserCustomComponent(component, props, showAvatar));
+}
+
 export function addResponseMessage(text) {
   store.dispatch(actions.addResponseMessage(text));
 }
