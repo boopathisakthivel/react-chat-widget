@@ -196,6 +196,12 @@ If you want to add new messages, you can use the following methods:
     - text
   - This method will add a new message written as a user. Keep in mind it will not trigger the prop handleNewUserMessage()
 
+- **addUserCustomComponent**
+  - params: 
+    - component: Component to be render,
+    - props: props the component needs
+  - Method to render a custom component inside the messages container for user message. With this method, you can add whatever component you need the widget to have.
+
 - **addLinkSnippet**
   - params:
     - link
