@@ -44,3 +44,7 @@ export function isWidgetOpened() {
 export function setQuickButtons(buttons) {
   store.dispatch(actions.setQuickButtons(buttons));
 }
+
+export function removeLastMessage() {
+  store.dispatch(actions.removeLastMessage());
+}

@@ -27,7 +27,10 @@ const messagesReducer = {
   [actionTypes.DROP_MESSAGES]: () => List([]),
 
   [actionTypes.HIDE_AVATAR]: (state, { index }) =>
-    state.update(index, message => message.set('showAvatar', false))
+    state.update(index, message => message.set('showAvatar', false)),
+
+  [actionTypes.REMOVE_LAST_MESSAGE] : (state) =>
+    state.pop()
 }
 
 export default (state = initialState, action) => createReducer(messagesReducer, state, action);

@@ -224,6 +224,9 @@ If you want to add new messages, you can use the following methods:
 - **setQuickButtons**
   - params:
     - buttons: An array of objects with the keys `label` and `value`
+- **removeLastMessage**
+  - params: No params expected
+  - This method is to remove last message. It may be a user message or agent message.
 
 **Markdown is supported for the responses and user messages.**
 

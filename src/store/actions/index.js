@@ -75,3 +75,9 @@ export function setQuickButtons(buttons) {
     buttons
   }
 }
+
+export function removeLastMessage() {
+  return {
+    type: actions.REMOVE_LAST_MESSAGE
+  }
+}

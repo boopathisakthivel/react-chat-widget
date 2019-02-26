@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Widget, addResponseMessage, setQuickButtons, toggleMsgLoader, addUserCustomComponent } from '../index';
+import { Widget, addResponseMessage, setQuickButtons, toggleMsgLoader, addUserCustomComponent,removeLastMessage } from '../index';
 
 class Suggestion extends Component {
   render() {
@@ -26,6 +26,8 @@ export default class App extends Component {
       }
       
       addUserCustomComponent(Suggestion, {"className": "rcw-client", "text": "test"}, false);
+
+      removeLastMessage();
     }, 2000);
   }
 
